@@ -1,0 +1,907 @@
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --background1: rgb(255, 255, 255);
+    --background2: rgb(246, 246, 246);
+    --background3: #0fa34a;
+    --background2before1: rgba(246, 246, 246, 1);
+    --textColor1: #292929;
+    --textColor2: #333;
+    --textColor3: #333333;
+    --textButton: rgb(246, 246, 246);
+    --buttonColor1: #0fa34a;
+    --buttonColor2: #5fd18c;
+    --buttonColor3: #0e9544;
+    --buttonColor4: #58c182;
+    --toolBoxColor1: #e6ffe6;
+    --toolBoxColor2: #d8efd8;
+    --colorBorder: #d9d9d9;
+    --hoverColor1: rgb(230, 230, 230);
+    --hoverColor2: rgb(240, 240, 240);
+    --densityBarMedium: #ffcc00;
+    --densityBarHigh: #ff4747;
+    --heroImage: url("../images/healthyImage1.png");
+}
+html.darkTheme {
+    --background1: rgb(18, 18, 18);
+    --background2: #0d0d0d;
+    --background3: #204320;
+    --background2before1: rgba(13, 13, 13, 1);
+    --textColor1: #e0e0e0;;
+    --textColor2: #dadada;
+    --textColor3: #b5b5b5;
+    --textButton: rgb(9, 9, 9);
+    --buttonColor1: #0fa34a;
+    --buttonColor2: #5fd18c;
+    --buttonColor3: #0fac4e;
+    --buttonColor4: #63db93;
+    --toolBoxColor1: #1a361a;
+    --toolBoxColor2: #204320;
+    --colorBorder: #444;
+    --hoverColor1: rgb(34, 34, 34);
+    --hoverColor2: rgb(33, 33, 33);
+    --densityBarMedium: #ffcc00;
+    --densityBarHigh: #ff4747;
+    --heroImage: url("../images/healthyImage1Dark.png");
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5.0rem;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.0rem 20.0rem;
+    background: var(--background1);
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--colorBorder);
+}
+.logo {
+    flex-basis: 20.0rem;
+}
+.logoLight {
+    display: block;
+    height: 3.0rem;
+    object-fit: contain;
+}
+.logoDark {
+    display: none;
+    height: 3.0rem;
+    object-fit: contain;
+}
+html.darkTheme .logoLight {
+  display: none;
+}
+html.darkTheme .logoDark {
+  display: block;
+}
+nav {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+nav a {
+    padding: 1.0rem 1.0rem;
+    background: transparent;
+    margin-right: 2.0rem;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    -webkit-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    color: var(--textColor2);
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+nav a:hover {
+    background: var(--hoverColor1);
+    border-radius: 5px;
+}
+.headerRight {
+    display: flex;
+    gap: 5px;
+    flex-basis: 20.0rem;
+    max-height: 4.0rem;
+    justify-content: flex-end;
+}
+.languageSection {
+    display: flex;
+    position: relative;
+}
+.accountButton {
+    display: flex;
+}
+.languageMenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0.8rem;
+    background-color: var(--background1);
+    min-width: 150px;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 1001;
+    list-style: none;
+    padding: 0.5rem;
+    margin: 0;
+    border: none;
+}
+html.darkTheme .languageMenu {
+    border: 1px solid var(--colorBorder);
+}
+.languageMenu.show {
+    display: block;
+}
+.langOption {
+    display: block;
+    padding: 1.0rem 1.5rem;
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--textColor2);
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+}
+.langOption:hover {
+    background-color: var(--hoverColor1);
+}
+.headerButton {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+}
+.accountButtonAll {
+    display: flex;
+    position: relative;
+}
+.accountButton {
+    background: transparent;
+    display: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+}
+.accountDiv {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    border-radius: 10px;
+    background-color: var(--background1);
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.accountDiv.show {
+    display: flex;
+}
+html.darkTheme .accountDiv {
+    border: 1px solid var(--colorBorder);
+}
+.accountLogOut {
+    background: var(--buttonColor3);
+    color:var(--textButton);
+    white-space: nowrap;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border: 2px solid  var(--buttonColor1);
+    padding: 1.0rem 3rem;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+}
+.accountLogOut:hover {
+    background: var(--buttonColor3);
+}
+.accountButton.userSignUp {
+    display: block;
+}
+.headerButtonImg {
+    display: block;
+    height: 3.0rem;
+    object-fit: contain;
+    padding: 0.5rem 0.5rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+.headerButtonImgLight {
+    display: block;
+    height: 3.0rem;
+    object-fit: contain;
+    padding: 0.5rem 0.5rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+.headerButtonImgDark {
+    display: none;
+    height: 3.0rem;
+    object-fit: contain;
+    padding: 0.5rem 0.5rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+html.darkTheme .headerButtonImgLight {
+  display: none;
+}
+html.darkTheme .headerButtonImgDark {
+  display: block;
+}
+.startButton {
+    background: var(--buttonColor1);
+    color: var(--textButton);
+    border: none;
+    padding: 1.15rem 1.0rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    display: none;
+    outline: none;
+}
+.startButton.userSignUp {
+    display: block;
+}
+.startButton:hover {
+    background: var(--buttonColor3);
+}
+.headerButtonImg:hover {
+    background: var(--hoverColor1);
+    border-radius: 5px;
+}
+.headerButtonImgLight:hover {
+    background: var(--hoverColor1);
+    border-radius: 5px;
+}
+.headerButtonImgDark:hover {
+    background: var(--hoverColor1);
+    border-radius: 5px;
+}
+body {
+    margin: 0;
+}
+.hero {
+    position: relative;
+    z-index: 0;
+    background-color: var(--background2);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 2.0rem;
+    padding-bottom: 10.0rem;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    min-height: 157.0rem;
+
+    background:
+        linear-gradient(to bottom, var(--background2before1) 0%, rgba(246, 246, 246, 0) 80%),
+        linear-gradient(to top, var(--background2before1) 0%, rgba(246, 246, 246, 0) 90%),
+        var(--heroImage);
+    background-size: contain;
+    background-position: center 1.0rem;
+    background-repeat: no-repeat;
+
+    z-index: -1;
+    opacity: 0;
+    animation: imageOpacity1 1.2s ease forwards;
+    animation-delay: 1.2s;
+}
+@keyframes imageOpacity1 {
+    from { opacity: 0; scale: 0.9;}
+    to { opacity: 1; scale: 1;}
+}
+.heroDiv1 {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 10.0rem;
+    padding-bottom: 10.0rem;
+    padding-left: 15%;
+    padding-right: 10%;
+    gap: 10px;
+    width: 100%;
+}
+.heroH1 {
+    font-family: 'Poppins', sans-serif;
+    max-width: 1000px;
+    font-size: 6.4rem;
+    color: var(--textColor1);
+    margin-bottom: 0;
+    animation: fadeUpHeroH1 0.8s ease forwards;
+    opacity: 0;
+}
+@keyframes fadeUpHeroH1 {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.heroP1 {
+    font-family: 'Inter', sans-serif;
+    max-width: 400px;
+    font-size: 2.4rem;
+    color: var(--textColor2);
+    margin-top: 0;
+    margin-bottom: 1.0rem;
+    animation: fadeUpHeroP1 0.8s ease forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+@keyframes fadeUpHeroP1 {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.heroBut1 {
+    background: linear-gradient(to right, var(--buttonColor1), var(--buttonColor2));
+    color: var(--textButton);
+    border: none;
+    padding: 2.0rem 4.0rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    display: inline-block;
+    outline: none;
+    transition: background 0.3 ease;
+    animation: fadeUpHeroBut1 0.8s ease forwards;
+    animation-delay: 0.6s;
+    opacity: 0;
+}
+@keyframes fadeUpHeroBut1 {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.heroBut1:hover {
+    background: linear-gradient(to right, var(--buttonColor3), var(--buttonColor4));
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.heroDivAll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 25%;
+}
+.heroDiv2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+.heroH2 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    max-width: 1000px;
+    margin-bottom: 0;
+    font-size: 5.8rem;
+    color: var(--textColor1);
+}
+.heroP2 {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    max-width: 400px;
+    margin-top: 0;
+    margin-bottom: 2.0rem;
+    font-size: 2.0rem;
+    color: var(--textColor2);
+}
+.heroDiv3 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 90px;
+    margin: 0 auto;
+    padding: 0rem 2.0rem;
+}
+.heroToolBox {
+    position: relative;
+    background: var(--toolBoxColor1);
+    padding: 2.0rem 1.5rem;
+    padding-left: 1.5rem;
+    padding-bottom: 25.0rem;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 300px;
+    margin: 0px auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: none;
+}
+html.darkTheme .heroToolBox {
+    border: 1px solid var(--colorBorder);
+}
+.heroToolBox:hover {
+    cursor: pointer;
+    background: var(--toolBoxColor2);
+}
+.heroToolBoxH {
+    font-family: 'Poppins', sans-serif;
+    max-width: 280px;
+    margin-top: 0;
+    font-size: 2.8rem;
+    color: var(--textColor3);
+    position: relative;
+    z-index: 2;
+}
+.heroToolBoxImg {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.4;
+    z-index: 1;
+}
+.img1 {
+    bottom: -10px;
+    scale: 1.05;
+}
+.img2 {
+    bottom: 50px;
+    scale: 1.5;
+}
+.img3 {
+    bottom: -50px;
+    scale: 1.1;
+}
+.conception {
+    position: relative;
+    z-index: 0;
+    background-color: var(--background1);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 2.0rem;
+    padding-top: 10.0rem;
+    padding-bottom: 10.0rem;
+    overflow: hidden;
+}
+.conceptionDiv1 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+.conceptionH1 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    max-width: 1000px;
+    font-size: 4.8rem;
+    margin-top: 0;
+    color: var(--textColor1);
+    margin-block-end: 0;
+}
+.conceptionP1 {
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    max-width: 600px;
+    font-size: 2.0rem;
+    color: var(--textColor2);
+    margin-block-start: 1.0rem;
+}
+.conceptionBut1 {
+    background: transparent;
+    color:var(--buttonColor1);
+    font-size: 1.4rem;
+    font-weight: 700;
+    border: 2px solid  var(--buttonColor1);
+    padding: 2.0rem 5.0rem;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+}
+.conceptionBut1:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.conceptionDiv2All {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 200px;
+    margin: 0 auto;
+    margin-top: 6.5%;
+}
+.conceptionImg1 img {
+    height: 400px;
+    display: block;
+    padding-top: 5.0rem;
+    mask-image: radial-gradient(circle, black 30%, transparent 100%);
+    -webkit-mask-image: linear-gradient(circle, black 30%, transparent 100%);
+}
+.conceptionH {
+    font-family: 'Poppins', sans-serif;
+    max-width: 500px;
+    font-size: 4.8rem;
+    color: var(--textColor1);
+    margin-top: 13.0rem;
+    margin-block-end: 2.0rem;
+}
+.conceptionUl {
+    list-style: none;
+    font-family: 'Inter', sans-serif;
+    max-width: 400px;
+    font-size: 1.6rem;
+    color: var(--textColor2);
+    margin-block-start: 1.0rem;
+}
+.conceptionUl li {
+    position: relative;
+    padding-top: 0.25rem;
+    margin-bottom: 2.0rem;
+}
+.conceptionUl li::before {
+    position: absolute;
+    top: 0;
+    left: -40px;
+    content: "✅";
+}
+.conceptionDiv3All {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px;
+    margin: 0 auto;
+    margin-top: 10.0rem;
+}
+.conceptionImg2 img {
+    height: 400px;
+    display: block;
+    padding-top: 5.0rem;
+    mask-image: radial-gradient(circle, black 20%, transparent 100%);
+    -webkit-mask-image: linear-gradient(circle, black 20%, transparent 100%);
+}
+.conceptionDiv4All {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0px;
+    margin: 0 auto;
+    margin-top: 10.0rem;
+}
+.conceptionImg3 img {
+    height: 400px;
+    display: block;
+    padding-top: 5.0rem;
+    mask-image: radial-gradient(circle, black 10%, transparent 100%);
+    -webkit-mask-image: linear-gradient(circle, black 10%, transparent 100%);
+}
+.conceptionH4 {
+    font-family: 'Poppins', sans-serif;
+    max-width: 500px;
+    font-size: 4.8rem;
+    color: var(--textColor1);
+    margin-top: 10.5rem;
+    margin-block-end: 2.0rem;
+}
+.features {
+    position: relative;
+    background: var(--background2);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 2.0rem;
+    padding-top: 10.0rem;
+    overflow: hidden;
+}
+.featuresDivAll {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 10.0rem;
+    gap: 100px;
+    margin: 0 auto;
+}
+.featuresH {
+    font-family: 'Poppins', sans-serif;
+    max-width: 500px;
+    font-size: 4.8rem;
+    color: var(--textColor1);
+    margin-top: 5.0rem;
+    margin-block-end: 2.0rem;
+}
+.featuresP {
+    font-family: 'Inter', sans-serif;
+    max-width: 400px;
+    font-size: 1.6rem;
+    color: var(--textColor2);
+    margin-block-start: 1.0rem;
+    margin-block-end: 3.0rem;
+}
+.featuresButtons {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    width: 200px;
+}
+.featuresBut {
+    background: transparent;
+    color:var(--buttonColor1);
+    font-weight: 600;
+    border: 2px solid  var(--buttonColor1);
+    padding: 1.0rem 2.0rem;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+}
+.featuresBut:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background: linear-gradient(to right, rgba(15, 163, 74, 0.2), rgba(95, 209, 140, 0.2));
+}
+.featuresBut.active {
+    background: linear-gradient(to right, var(--buttonColor1), var(--buttonColor2));
+    color: var(--background2);
+}
+.featuresVideoCont {
+    position: relative;
+    background: var(--background2);
+    min-height: 500px;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: none;
+}
+html.darkTheme .featuresVideoCont {
+    border: 1px solid var(--colorBorder);
+}
+.featuresVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+.featuresVideo.active {
+    opacity: 1;
+}
+.finalAction {
+    height: auto;
+    min-height: 500px;
+    background: linear-gradient(to bottom, var(--background3), var(--background1))
+}
+.finalActionDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+    padding-top: 7.5%;
+}
+.finalActionDiv2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.finalActionH {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    max-width: 900px;
+    font-size: 4.8rem;
+    color: var(--textColor1);
+    margin-block-end: 0;
+}
+.finalActionP {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    max-width: 600px;
+    font-size: 2.0rem;
+    color: var(--textColor2);
+    margin-block-start: 1.0rem;
+    margin-block-end: 2.0rem;
+}
+.finalActionBut {
+    background: var(--buttonColor1);
+    color: var(--background2);
+    border: none;
+    padding: 2.0rem 4.0rem;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    display: inline-block;
+    outline: none;
+    transition: background 0.3 ease;
+}
+.finalActionBut:hover {
+    background: var(--buttonColor3);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.finalActionImg {
+    max-height: 250px;
+    width: auto;
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease, scale 1s ease;
+}
+.strawberry {
+    transform: translateX(-150px);
+}
+.orange {
+    transform: translateX(150px);
+}
+.finalActionImg.active.strawberry {
+    opacity: 0.6;
+    transform: translateX(0);
+}
+.finalActionImg.active.orange {
+    opacity: 0.6;
+    transform: translateX(0);
+}
+.footer {
+    height: auto;
+    min-height: 200px;
+    background: var(--background1);
+    border-top: 1px solid var(--colorBorder);
+    padding: 5.0rem 2.0rem 1.0rem 2.0rem;
+}
+.footerDivAll {
+    padding-left: 20.0rem;
+    padding-right: 30.0rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+.footerDiv1 {
+    flex: 2;
+    min-width: 300px;
+}
+.logo2Light {
+    display: block;
+    max-width: 300px;
+}
+.logo2Dark {
+    display: none;
+    max-width: 300px;
+}
+html.darkTheme .logo2Light {
+  display: none;
+}
+html.darkTheme .logo2Dark {
+  display: block;
+}
+.footerP1 {
+    font-family: 'Inter', sans-serif;
+    max-width: 300px;
+    font-size: 1.4rem;
+    color: var(--textColor2);
+    margin-block-start: 1.0rem;
+    margin-block-end: 2.0rem;
+}
+.footerDiv2 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+    min-width: 100px;
+}
+.footerP2 {
+    font-family: 'Inter', sans-serif;
+    width: 100px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--textColor2);
+    margin-block-start: 0;
+    margin-block-end: 2.0rem;
+}
+.footerA {
+    width: 100px;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    color: var(--textColor2);
+}
+.footerA:hover {
+    text-decoration: underline;
+}
+.footerDiv3 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+    min-width: 100px;
+}
+.footerCopyright {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.4rem;
+  text-align: center;
+  color: rgb(153, 153, 153);
+  font-weight: 400;
+  margin-top: 4.0rem;
+  padding-top: 1.0rem;
+  border-top: 1px solid var(--colorBorder);
+}
+.animate {
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+.anim1 {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+.anim1.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.anim2 {
+    opacity: 0;
+    transform: translateX(200px);
+    transition: all 0.8s ease;
+}
+.anim2.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+.anim3 {
+    opacity: 0;
+    transform: translateX(-200px);
+    transition: all 0.8s ease;
+}
+.anim3.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 
+   ADAPTIVE STYLES
+*/
+
+@media (max-widht: 1200px) {
+
+}
+
+@media (max-widht: 768px) {
+    html {
+    font-size: 56.25%;
+    }
+}

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Compare - NutriCost</title>
+    <link rel="icon" type="nutriCostIcon/ico" href="/images/nutriCostIcon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/compare.css">
+    <script src="/jsFiles/languageDownloader.js"></script>
+    <script>
+    (function() {
+    const savedTheme = localStorage.getItem('theme')
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    if (savedTheme === 'dark' || (savedTheme === null && systemPrefersDark)) {
+      document.documentElement.classList.add('darkTheme')
+    }
+  })()
+</script>
+</head>
+<header class="header">
+    <a href="/index.html" class="logo">
+        <img src="/images/nutriCostLight.png" alt="nutriCostLight" class="logoLight">
+        <img src="/images/nutriCostDark.png" alt="nutriCostDark" class="logoDark">
+    </a>
+    <nav class="nav">
+        <a href="/pages/calculator.html" data-key="navCalculator"></a>
+        <a href="/pages/compare.html" data-key="navCompare"></a>
+        <a href="/pages/calendar.html"data-key="navCalendar"></a>
+    </nav>
+    <div class="headerRight">
+        <div class="headerButton" id="themeButton">
+            <img src="" alt="" class="headerButtonImg" id="themeImg">
+        </div>
+        <div class="languageSection">
+            <button class="headerButton" id="langButton">
+                <img src="/images/languageLight.png" alt="languageButtonLight" class="headerButtonImgLight">
+                <img src="/images/languageDark.png" alt="languageButtonDark" class="headerButtonImgDark">
+            </button>
+            <ul class="languageMenu" id="langMenu">
+                <li><a class="langOption" data-lang="en">English (US)</a></li>
+                <li><a class="langOption" data-lang="uk">Українська (UA)</a></li>
+            </ul>
+        </div>
+        <div class="accountButtonAll">
+            <button class="accountButton" id="accountButton">
+                <img src="/images/accountLight.png" alt="accountLight" class="headerButtonImgLight">
+                <img src="/images/accountDark.png" alt="accountDark" class="headerButtonImgDark">
+            </button>
+            <div class="accountDiv">
+                <button class="accountLogOut" data-key="accountLogOut"></button>
+            </div>
+            <button class="startButton" id="startButton" data-key="startButton"></button>
+        </div>
+    </div>
+</header>
+<body class="fixedPage">
+    <div class="compDivAll">
+        <div class="compDivMeal">
+            <div class="compDivChoose" id="compDivChoose1">
+                <div class="compDivChooseIngr">
+                    <button class="compChooseBut" data-slot="1" data-key="compChooseIngredient"></button>
+                    <div class="databaseWindow">
+                        <input id="searchInput1" type="text" class="searchInput"
+                        placeholder="" data-key-placeholder="calcDatabaseSearch">
+                        <div class="databaseList">
+                        </div>
+                    </div>
+                </div>
+                <div class="compDivChooseMeal">
+                    <button class="compChooseBut" data-slot="1" data-key="calcChooseMeal"></button>
+                    <div class="mealWindow"  id="mealDatabaseWindow">
+                        <input id="searchInputMeal1" type="text" class="searchInput"
+                        placeholder="Search...">
+                        <div class="databaseList" data-key-placeholder="calcDatabaseSearch">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="compDivChosen" id="compDivChosen1">
+                <div class="compDivResult">
+                    <p class="compP">
+                        <span data-key="calcResultName"></span>
+                        <span id="compResultNameOfMeal1" class="resultSpan"></span>
+                    </p>
+                    <button class="compButMealDel" data-id="compCloseBut1">
+                        <img src="/images/closeImageLight.png" class="closeLight">
+                        <img src="/images/closeImageDark.png" class="closeDark">
+                    </button>
+                </div>
+                <div class="compDivResultMacroBalance">
+                    <p class="compP" data-key="ingredient1MacroBalanceP"></p>
+                    <p class="compResultP">
+                        <span data-key="calcResultProteins"></span>
+                        <span id="compResultProteinsOfMeal1" class="resultSpan"></span>
+                        <span data-key="unitGramm" class="unitResult"></span>
+                    </p>
+                    <p class="compResultP">
+                        <span data-key="calcResultFats"></span>
+                        <span id="compResultFatsOfMeal1" class="resultSpan"></span>
+                        <span data-key="unitGramm" class="unitResult"></span>
+                    </p>
+                    <p class="compResultP">
+                        <span data-key="calcResultCarbohydrates"></span>
+                        <span id="compResultCarbohydratesOfMeal1" class="resultSpan"></span>
+                        <span data-key="unitGramm" class="unitResult"></span>
+                    </p>
+                </div>
+                <div class="compDivResultsEnergy">
+                    <p class="compP" data-key="compEnergy"></p>
+                    <p class="compP">
+                        <span data-key="compResultEnergy1"></span>
+                        <span id="compResultEnergyOfMeal1" class="resultSpan"></span>
+                        <span data-key="unitKcal" class="unitResult"></span>
+                    </p>
+                </div>
+                <div class="compDivResultDensity">
+                    <p class="compP" data-key="compCalorieDensity"></p>
+                    <progress class="resultDensityBar" id="resultDensityBar1" value="0" max="100"></progress>
+                </div>
+            </div>
+        </div>
+        <div class="compDivSign">
+            <h1 class="compMainH">?</h1>
+        </div>
+        <div class="compDivMeal">
+            <div class="compDivChoose" id="compDivChoose2">
+                <div class="compDivChooseIngr">
+                    <button class="compChooseBut" data-slot="2" data-key="compChooseIngredient"></button>
+                    <div class="databaseWindow">
+                        <input id="searchInput2" type="text" class="searchInput"
+                        placeholder="" data-key-placeholder="calcDatabaseSearch">
+                        <div class="databaseList">
+                        </div>
+                    </div>
+                </div>
+                <div class="compDivChooseMeal">
+                    <button class="compChooseBut" data-slot="2" data-key="calcChooseMeal"></button>
+                    <div class="mealWindow"  id="mealDatabaseWindow">
+                        <input id="searchInputMeal2" type="text" class="searchInput"
+                        placeholder="" data-key-placeholder="calcDatabaseSearch">
+                        <div class="databaseList">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="compDivChosen" id="compDivChosen2">
+                <div class="compDivResult">
+                    <p class="compP">
+                        <span data-key="calcResultName"></span>
+                        <span id="compResultNameOfMeal2" class="resultSpan"></span>
+                        <button class="compButMealDel" data-id="compCloseBut2">
+                            <img src="/images/closeImageLight.png" class="closeLight">
+                            <img src="/images/closeImageDark.png" class="closeDark">
+                        </button>
+                    </p>
+                </div>
+                <div class="compDivResultMacroBalance">
+                    <p class="compP" data-key="ingredient1MacroBalanceP"></p>
+                    <p class="compResultP">
+                        <span data-key="calcResultProteins"></span>
+                        <span id="compResultProteinsOfMeal2" class="resultSpan"></span>
+                        <span data-key="unitGramm" class="unitResult"></span>
+                    </p>
+                    <p class="compResultP">
+                        <span data-key="calcResultFats"></span>
+                        <span id="compResultFatsOfMeal2" class="resultSpan"></span>
+                        <span data-key="unitGramm" class="unitResult"></span>
+                    </p>
+                    <p class="compResultP">
+                        <span data-key="calcResultCarbohydrates"></span>
+                        <span id="compResultCarbohydratesOfMeal2" class="resultSpan"></span>
+                        <span data-key="unitGramm" class="unitResult"></span>
+                    </p>
+                </div>
+                <div class="compDivResultsEnergy">
+                    <p class="compP" data-key="compEnergy"></p>
+                    <p class="compP">
+                        <span data-key="compResultEnergy2"></span>
+                        <span id="compResultEnergyOfMeal2" class="resultSpan"></span>
+                        <span data-key="unitKcal" class="unitResult"></span>
+                    </p>
+                </div>
+                <div class="compDivResultDensity">
+                    <p class="compP" data-key="compCalorieDensity"></p>
+                    <progress class="resultDensityBar" id="resultDensityBar2" value="0" max="100"></progress>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/jsFiles/compare.js" defer></script>
+    <script src="/jsFiles/globalVariables.js" defer></script>
+    <script src="/jsFiles/main.js" defer></script>
+</body>

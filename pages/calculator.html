@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator - NutriCost</title>
+    <link rel="icon" type="nutriCostIcon/ico" href="/images/nutriCostIcon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/calculator.css">
+    <script src="/jsFiles/languageDownloader.js"></script>
+    <script>
+    (function() {
+    const savedTheme = localStorage.getItem('theme')
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    if (savedTheme === 'dark' || (savedTheme === null && systemPrefersDark)) {
+      document.documentElement.classList.add('darkTheme')
+    }
+  })()
+</script>
+</head>
+<header class="header">
+    <a href="/index.html" class="logo">
+        <img src="/images/nutriCostLight.png" alt="nutriCostLight" class="logoLight">
+        <img src="/images/nutriCostDark.png" alt="nutriCostDark" class="logoDark">
+    </a>
+    <nav class="nav">
+        <a href="/pages/calculator.html" data-key="navCalculator"></a>
+        <a href="/pages/compare.html" data-key="navCompare"></a>
+        <a href="/pages/calendar.html"data-key="navCalendar"></a>
+    </nav>
+    <div class="headerRight">
+        <div class="headerButton" id="themeButton">
+            <img src="" alt="" class="headerButtonImg" id="themeImg">
+        </div>
+        <div class="languageSection">
+            <button class="headerButton" id="langButton">
+                <img src="/images/languageLight.png" alt="languageButtonLight" class="headerButtonImgLight">
+                <img src="/images/languageDark.png" alt="languageButtonDark" class="headerButtonImgDark">
+            </button>
+            <ul class="languageMenu" id="langMenu">
+                <li><a class="langOption" data-lang="en">English (US)</a></li>
+                <li><a class="langOption" data-lang="uk">Українська (UA)</a></li>
+            </ul>
+        </div>
+        <div class="accountButtonAll">
+            <button class="accountButton" id="accountButton">
+                <img src="/images/accountLight.png" alt="accountLight" class="headerButtonImgLight">
+                <img src="/images/accountDark.png" alt="accountDark" class="headerButtonImgDark">
+            </button>
+            <div class="accountDiv">
+                <button class="accountLogOut" data-key="accountLogOut"></button>
+            </div>
+            <button class="startButton" id="startButton" data-key="startButton"></button>
+        </div>
+    </div>
+</header>
+<body class="fixedPage">
+    <div class="calcDivAll">
+        <div class="calcDivSector1">
+            <div class="calcDivMeals">
+                <div class="calcDivMeal add" id="calcDivMeal1">
+                    <div class="calcDivMealBase">
+                        <div class="calcDivMain">
+                            <h1 class="calcH" data-key="ingredient1"></h1>
+                        </div>
+                        <form class="calcFormName">
+                            <p class="calcFormP1" data-key="ingredient1NameP"></p>
+                            <button class="calcButChoose" type="button" data-slot="1" data-key="ingredientChoose"></button>
+                            <input type="text" class="calcInput" id="ingredient1Name"
+                            placeholder="" data-key-placeholder="calcIngridientName" maxlength="20">
+                            <div class="databaseWindow">
+                                <input id="searchInput1" type="text" class="searchInput"
+                                placeholder="" data-key-placeholder="calcDatabaseSearch" maxlength="20">
+                                <div class="databaseList">
+                                </div>
+                            </div>
+                        </form>
+                        <form class="calcFormWeight">
+                            <p class="calcFormP" data-key="ingredient1WeightP"></p>
+                            <input type="number" class="calcInput" id="ingredient1Weight"
+                            placeholder="" data-key-placeholder="calcIngridientWeight" step="any" min="1">
+                        </form>
+                        <form class="calcFormMacroBalance">
+                            <p class="calcFormP2" data-key="ingredient1MacroBalanceP"></p>
+                            <input type="number" class="calcInput" id="ingredient1Proteins" placeholder="" data-key-placeholder="calcIngridientProteins" step="any" min="0.01">
+                            <input type="number" class="calcInput" id="ingredient1Fats" placeholder="" data-key-placeholder="calcIngridientFats" step="any" min="0.01">
+                            <input type="number" class="calcInput" id="ingredient1Carbohydrates" placeholder="" data-key-placeholder="calcIngridientCarbohydrates" step="any" min="0.01">
+                        </form>
+                        <form class="calcFormCost">
+                            <p class="calcFormP" data-key="ingredient1CostP"></p>
+                            <input type="number" class="calcInput" id="ingredient1Cost" placeholder="" data-key-placeholder="calcIngridientCost" step="any" min="0.01">
+                        </form>
+                    </div>
+                </div>
+                <div class="calcDivMeal" id="calcDivMeal2">
+                    <div class="calcDivMealBase">
+                        <div class="calcDivMain">
+                            <h1 class="calcH" data-key="ingredient2"></h1>
+                            <button class="calcButMealDel" data-id="calcDivMeal2">
+                                <img src="/images/closeImageLight.png" class="closeLight">
+                                <img src="/images/closeImageDark.png" class="closeDark">
+                            </button>
+                        </div>
+                        <form class="calcFormName">
+                            <p class="calcFormP1" data-key="ingredient1NameP"></p>
+                            <button class="calcButChoose" type="button" data-slot="2" data-key="ingredientChoose"></button>
+                            <input type="text" class="calcInput" id="ingredient2Name"
+                            placeholder="" data-key-placeholder="calcIngridientName" maxlength="20">
+                            <div class="databaseWindow">
+                                <input id="searchInput2" type="text" class="searchInput"
+                                placeholder="" data-key-placeholder="calcDatabaseSearch" maxlength="20">
+                                <div class="databaseList">
+                                </div>
+                            </div>
+                        </form>
+                        <form class="calcFormWeight">
+                            <p class="calcFormP" data-key="ingredient1WeightP"></p>
+                            <input type="number" class="calcInput" id="ingredient2Weight"
+                            placeholder="" data-key-placeholder="calcIngridientWeight" step="any" min="1">
+                        </form>
+                        <form class="calcFormMacroBalance">
+                            <p class="calcFormP2" data-key="ingredient1MacroBalanceP"></p>
+                            <input type="number" class="calcInput" id="ingredient2Proteins" placeholder="" data-key-placeholder="calcIngridientProteins" step="any" min="0.01">
+                            <input type="number" class="calcInput" id="ingredient2Fats" placeholder="" data-key-placeholder="calcIngridientFats" step="any" min="0.01">
+                            <input type="number" class="calcInput" id="ingredient2Carbohydrates" placeholder="" data-key-placeholder="calcIngridientCarbohydrates" step="any" min="0.01">
+                        </form>
+                        <form class="calcFormCost">
+                            <p class="calcFormP" data-key="ingredient1CostP"></p>
+                            <input type="number" class="calcInput" id="ingredient2Cost" placeholder="" data-key-placeholder="calcIngridientCost" step="any" min="0.01">
+                        </form>
+                    </div>
+                    <div class="calcDivMealAdd">
+                        <button class="addButton add" data-id="calcDivMeal2">
+                            <img src="/images/addImageLight.png" class="addLight">
+                            <img src="/images/addImageDark.png" class="addDark">
+                        </button>
+                    </div>
+                </div>
+                <div class="calcDivMeal" id="calcDivMeal3">
+                    <div class="calcDivMealBase">
+                        <div class="calcDivMain">
+                            <h1 class="calcH" data-key="ingredient3"></h1>
+                            <button class="calcButMealDel" data-id="calcDivMeal3">
+                                <img src="/images/closeImageLight.png" class="closeLight">
+                                <img src="/images/closeImageDark.png" class="closeDark">
+                            </button>
+                        </div>
+                        <form class="calcFormName">
+                            <p class="calcFormP1" data-key="ingredient1NameP"></p>
+                            <button class="calcButChoose" type="button" data-slot="3" data-key="ingredientChoose"></button>
+                            <input type="text" class="calcInput" id="ingredient3Name"
+                            placeholder="" data-key-placeholder="calcIngridientName" maxlength="20">
+                            <div class="databaseWindow">
+                                <input id="searchInput3" type="text" class="searchInput"
+                                placeholder="" data-key-placeholder="calcDatabaseSearch" maxlength="20">
+                                <div class="databaseList">
+                                </div>
+                            </div>
+                        </form>
+                        <form class="calcFormWeight">
+                            <p class="calcFormP" data-key="ingredient1WeightP"></p>
+                            <input type="number" class="calcInput" id="ingredient3Weight"
+                            placeholder="" data-key-placeholder="calcIngridientWeight" step="any" min="1">
+                        </form>
+                        <form class="calcFormMacroBalance">
+                            <p class="calcFormP2" data-key="ingredient1MacroBalanceP"></p>
+                            <input type="number" class="calcInput" id="ingredient3Proteins" placeholder="" data-key-placeholder="calcIngridientProteins" step="any" min="0.01">
+                            <input type="number" class="calcInput" id="ingredient3Fats" placeholder="" data-key-placeholder="calcIngridientFats" step="any" min="0.01">
+                            <input type="number" class="calcInput" id="ingredient3Carbohydrates" placeholder="" data-key-placeholder="calcIngridientCarbohydrates" step="any" min="0.01">
+                        </form>
+                        <form class="calcFormCost">
+                            <p class="calcFormP" data-key="ingredient1CostP"></p>
+                            <input type="number" class="calcInput" id="ingredient3Cost" placeholder="" data-key-placeholder="calcIngridientCost" step="any" min="0.01">
+                        </form>
+                    </div>
+                    <div class="calcDivMealAdd">
+                        <button class="addButton add" data-id="calcDivMeal3">
+                            <img src="/images/addImageLight.png" class="addLight">
+                            <img src="/images/addImageDark.png" class="addDark">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="calcDivResults">
+                <div class="calcDivResult">
+                    <h1 class="calcH" data-key="calcResults"></h1>
+                    <div class="calcDivResultAll">
+                        <div class="calcDivResult1">
+                            <p class="calcFormP">
+                                <span data-key="calcResultName"></span>
+                                <span id="calcResultNameOfMeal" class="resultSpan"></span>
+                            </p>
+                        </div>
+                        <div class="calcDivResultWeight">
+                            <p class="calcFormP">
+                                <span data-key="calcResultWeight"></span>
+                                <span id="calcResultWeightOfMeal" class="resultSpan"></span>
+                                <span data-key="unitGramm" class="unitResult"></span>
+                            </p>
+                        </div>
+                        <div class="calcDivResultMacroBalance">
+                            <p class="calcFormP" data-key="ingredient1MacroBalanceP"></p>
+                            <p class="calcResultP">
+                                <span data-key="calcResultProteins"></span>
+                                <span id="calcResultProteinsOfMeal" class="resultSpan"></span>
+                                <span data-key="unitGramm" class="unitResult"></span>
+                            </p>
+                            <p class="calcResultP">
+                                <span data-key="calcResultFats"></span>
+                                <span id="calcResultFatsOfMeal" class="resultSpan"></span>
+                                <span data-key="unitGramm" class="unitResult"></span>
+                            </p>
+                            <p class="calcResultP">
+                                <span data-key="calcResultCarbohydrates"></span>
+                                <span id="calcResultCarbohydratesOfMeal" class="resultSpan"></span>
+                                <span data-key="unitGramm" class="unitResult"></span>
+                            </p>
+                        </div>
+                        <div class="calcDivResultsEnergy">
+                            <p class="calcFormP">
+                                <span data-key="calcResultEnergy"></span>
+                                <span id="calcResultEnergyOfMeal" class="resultSpan"></span>
+                                <span data-key="unitKcal" class="unitResult"></span>
+                            </p>
+                        </div>
+                        <div class="calcDivResultDensity">
+                            <p class="calcFormP" data-key="calcCalorieDensity"></p>
+                            <progress id="resultDensityBar" value="0" max="100"></progress>
+                        </div>
+                        <div class="calcDivResultCost">
+                            <p class="calcFormP">
+                                <span data-key="calcResultCost"></span>
+                                <span id="calcResultCostOfMeal" class="resultSpan"></span>
+                                <span class="unitResult">$</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="calcDivTools">
+            <div class="calcDivTool1">
+                <div class="calcDivTool">
+                    <div class="calcDivToolIn">
+                        <div class="calcDivToolBut">
+                            <button class="calcButTool" id="chooseMealBtn" type="button" data-key="calcChooseMeal"></button>
+                            <div class="mealWindow"  id="mealDatabaseWindow">
+                                <input id="searchInputMeal" type="text" class="searchInput"
+                                placeholder="" data-key-placeholder="calcDatabaseSearch" maxlength="20">
+                                <div class="databaseList">
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="calcDivToolBut">
+                            <button class="calcButTool" id="saveMealBtn" type="button" data-key="calcSaveMeal"></button>
+                            <div class="mealSaveWindow"  id="mealSaveWindow">
+                                <input id="nameInputMeal" type="text" class="nameInput"
+                                placeholder="" data-key-placeholder="calcInputMeal" maxlength="20">
+                                <button class="calcButTool" id="confirmButYesMealSave" data-key="calcSaveMeal2"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="calcDivTool">
+                    <div class="calcDivToolIn">
+                        <div class="calcDivToolBut">
+                            <button class="calcButTool" id="changeIngredientBtn" data-key="calcChangeIngredient" disabled></button>
+                            <div class="calcDivToolConfirm" id="calcDivToolConfirmChange">
+                                <p class="calcFormP" data-key="calcConfirm"></p>
+                                <div class="calcDivToolConfirmBut">
+                                    <button class="calcButTool" id="confirmButYesChange" data-key="calcConfirmYes"></button>
+                                    <button class="calcButTool" id="confirmButNoChange" data-key="calcConfirmNo"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calcDivToolBut">
+                            <button class="calcButTool" id="saveIngredientBtn" data-key="calcSaveIngredient" disabled></button>
+                            <div class="calcDivToolConfirm" id="calcDivToolConfirmSave">
+                                <p class="calcFormP" data-key="calcConfirm"></p>
+                                <div class="calcDivToolConfirmBut">
+                                    <button class="calcButTool" id="confirmButYesSave" data-key="calcConfirmYes"></button>
+                                    <button class="calcButTool" id="confirmButNoSave" data-key="calcConfirmNo"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calcDivToolBut">
+                            <button class="calcButTool" id="deleteIngredientBtn" data-key="calcDeleteIngredient" disabled></button>
+                            <div class="calcDivToolConfirm" id="calcDivToolConfirmDel">
+                                <p class="calcFormP" data-key="calcConfirm"></p>
+                                <div class="calcDivToolConfirmBut">
+                                    <button class="calcButTool" id="confirmButYesDel" data-key="calcConfirmYes"></button>
+                                    <button class="calcButTool" id="confirmButNoDel" data-key="calcConfirmNo"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="calcDivTool">
+                    <button class="calcButTool" id="calcButAddCalendar" data-key="calcAddToCalendar"></button>
+                    <div class="calcDivToolConfirm" id="calcDivToolConfirmAdd">
+                        <p class="calcFormP" data-key="calcConfirm"></p>
+                        <div class="calcDivToolConfirmBut">
+                            <button class="calcButTool" id="confirmButYesAdd" data-key="calcConfirmYes"></button>
+                            <button class="calcButTool" id="confirmButNoAdd" data-key="calcConfirmNo"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="notificationDiv" id="notification">
+        <p class="notificationP" id="notificationMessage"></p>
+    </div>
+    <script src="/jsFiles/globalVariables.js" defer></script>
+    <script src="../jsFiles/main.js" defer></script>
+    <script src="/jsFiles/calculator.js" defer></script>
+</body>

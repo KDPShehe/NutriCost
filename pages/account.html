@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - NutriCost</title>
+    <link rel="icon" type="nutriCostIcon/ico" href="/images/nutriCostIcon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/account.css">
+    <script src="/jsFiles/languageDownloader.js"></script>
+    <script>
+    (function() {
+    const savedTheme = localStorage.getItem('theme')
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    if (savedTheme === 'dark' || (savedTheme === null && systemPrefersDark)) {
+      document.documentElement.classList.add('darkTheme')
+    }
+  })()
+</script>
+</head>
+<body class="fixedPage">
+    <div class="accountDivAll">
+        <div class="accountDivMain">
+            <div class="accountDivLogo">
+                <img src="/images/nutriCostLight.png" alt="nutriCostLight" class="acclogoLight">
+                <img src="/images/nutriCostDark.png" alt="nutriCostLight" class="acclogoDark">
+            </div>
+            <div class="accountDivChoose">
+                <button class="accountBut active" id="signUpBut" data-key="accountSignUp"></button>
+                <button class="accountBut" id="loginBut" data-key="accountLogin"></button>
+            </div>
+            <div class="accountDivSingUp show" id="signUpDiv">
+                <p class="accountP" data-key="accountSignUp"></p>
+                <input type="text" class="accountInput" id="accountNameSignUp"
+                placeholder="" data-key-placeholder="accLogin" maxlength="20">
+                <input type="text" class="accountInput" id="accountPasswordSignUp"
+                placeholder="" data-key-placeholder="accPassword" maxlength="20">
+                <button class="accountBut2" data-key="accountSignUp"></button>
+            </div>
+            <div class="accountDivLogin" id="loginDiv">
+                <p class="accountP" data-key="accountLogin"></p>
+                <input type="text" class="accountInput" id="accountNameLogin"
+                placeholder="" data-key-placeholder="accLogin" maxlength="20">
+                <input type="text" class="accountInput" id="accountPasswordLogin"
+                placeholder="" data-key-placeholder="accPassword" maxlength="20">
+                <button class="accountBut2" data-key="accountLogin"></button>
+            </div>
+            <div class="accountDivChange">
+                <div class="headerButton" id="themeButton">
+                    <img src="" alt="" class="headerButtonImg" id="themeImg">
+                </div>
+                <div class="languageSection">
+                    <button class="headerButton" id="langButton">
+                        <img src="/images/languageLight.png" alt="languageButtonLight" class="headerButtonImgLight">
+                        <img src="/images/languageDark.png" alt="languageButtonDark" class="headerButtonImgDark">
+                    </button>
+                    <ul class="languageMenu" id="langMenu">
+                        <li><a class="langOption" data-lang="en">English (US)</a></li>
+                        <li><a class="langOption" data-lang="uk">Українська (UA)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/jsFiles/globalVariables.js" defer></script>
+    <script src="/jsFiles/account.js" defer></script>
+</body>

@@ -1,0 +1,143 @@
+.body {
+    margin: 0;
+}
+.fixedPage {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+.accountDivAll {
+    z-index: 0;
+    background-color: var(--background2);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 16.2rem;
+    padding-bottom: 16.2rem;
+    justify-content: center;
+}
+.accountDivMain {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background1);
+    padding: 3rem;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+html.darkTheme .accountDivMain {
+    border: 1px solid var(--colorBorder);
+}
+.accountDivLogo {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3rem;
+}
+.acclogoLight {
+    display: block;
+    max-width: 200px;
+}
+.acclogoDark {
+    display: none;
+    max-width: 200px;
+}
+html.darkTheme .acclogoLight {
+  display: none;
+}
+html.darkTheme .acclogoDark {
+  display: block;
+}
+.accountDivChoose {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.accountBut {
+    background: transparent;
+    color: var(--buttonColor1);
+    font-size: 1.4rem;
+    font-weight: 700;
+    border: 2px solid  var(--buttonColor1);
+    padding: 1.0rem 6.0rem;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+}
+.accountBut.active {
+    background: var(--buttonColor3);
+    color:var(--textButton);
+}
+.accountBut:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.accountDivSingUp {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0 auto;
+}
+.accountDivSingUp.show {
+    display: flex;
+}
+.accountP {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    max-width: 400px;
+    font-size: 1.8rem;
+    color: var(--textColor2);
+    margin-bottom: 0.5rem;
+}
+.accountInput {
+    background: var(--background2);
+    border: 2px solid var(--colorBorder);
+    border-radius: 10px;
+    padding: 1rem;
+    padding-right: 5rem;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    color: var(--textColor2);
+    outline: none;
+}
+.accountInput:focus {
+    border-color: var(--buttonColor1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.accountInput.error {
+    border-color: var(--densityBarHigh);
+}
+.accountBut2 {
+    background: var(--buttonColor3);
+    color:var(--textButton);
+    font-size: 1.4rem;
+    font-weight: 700;
+    border: 2px solid  var(--buttonColor1);
+    padding: 1.0rem 5.0rem;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+}
+.accountBut2:hover {
+    background: var(--buttonColor3);
+}
+.accountDivLogin {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0 auto;
+}
+.accountDivLogin.show {
+    display: flex;
+}
+.accountDivChange {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    top: -11%;
+    left: 39%;
+}

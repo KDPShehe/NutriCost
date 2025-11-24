@@ -1,0 +1,594 @@
+.body {
+    margin: 0;
+}
+.fixedPage {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+.calcDivAll {
+    z-index: 0;
+    background-color: var(--background2);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 10.5rem 0rem 5.8rem 0rem;
+}
+.calcDivSector1 {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.calcDivMeals {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.calcDivMeal {
+    display: flex;
+    background-color: var(--background1);
+    align-items: stretch;
+    padding: 2.0rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    flex: 1;
+    min-height: 42.08rem;
+    min-width: 20rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: none;
+}
+html.darkTheme .calcDivMeal {
+    border: 1px solid var(--colorBorder);
+}
+.calcDivMeal.add:hover {
+    cursor: pointer;
+}
+.calcDivMeal.selected {
+    background-color: var(--hoverColor2);
+}
+.calcDivMealBase {
+    display: none;
+    align-items: flex-start;
+    max-width: 20rem;
+    flex-direction: column;
+    gap: 5px;
+    flex-grow: 1;
+}
+.calcDivMeal.add .calcDivMealBase {
+    display: flex;
+}
+.calcDivMain {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+}
+.calcFormName {
+    position: relative;
+}
+.calcH {
+    font-family: 'Poppins', sans-serif;
+    max-width: 1000px;
+    font-size: 2.6rem;
+    color: var(--textColor1);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.calcFormP1 {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    max-width: 400px;
+    font-size: 1.8rem;
+    color: var(--textColor2);
+    margin-top: 0.5rem;
+    margin-bottom: 1.0rem;
+}
+.calcButMealDel {
+    left: 17rem;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 45px;
+    outline: none;
+}
+.closeLight {
+    display: block;
+    height: 2rem;
+    object-fit: contain;
+    padding: 0.5rem 0.5rem;
+    transition: background 0.3s ease;
+}
+.closeDark {
+    display: none;
+    height: 2rem;
+    object-fit: contain;
+    padding: 0.5rem 0.5rem;
+    transition: background 0.3s ease;
+}
+html.darkTheme .closeLight {
+  display: none;
+}
+html.darkTheme .closeDark {
+  display: block;
+}
+.calcButMealDel:hover {
+    background: var(--hoverColor1);
+}
+.calcFormP {
+    font-family: 'Inter', sans-serif;
+    max-width: 400px;
+    font-size: 1.8rem;
+    color: var(--textColor2);
+    margin-top: 0.5rem;
+    margin-bottom: 1.0rem;
+}
+.calcButChoose {
+    background: var(--buttonColor1);
+    color: var(--textButton);
+    border: none;
+    margin-left: 5.5rem;
+    padding: 0.5rem 2.0rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    display: inline-block;
+    outline: none;
+}
+.calcButChoose:hover {
+    background: var(--buttonColor3);
+}
+.calcInput {
+    background: var(--background2);
+    border: 2px solid var(--colorBorder);
+    border-radius: 10px;
+    padding: 0.5rem;
+    min-width: 20rem;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    color: var(--textColor2);
+    outline: none;
+}
+.calcInput[type=number]::-webkit-outer-spin-button,
+.calcInput[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.calcInput[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+.calcInput:focus {
+    border-color: var(--buttonColor1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.calcFormP2 {
+    font-family: 'Inter', sans-serif;
+    max-width: 400px;
+    font-size: 1.8rem;
+    color: var(--textColor2);
+    margin-top: 0.5rem;
+    margin-bottom: 0rem;
+}
+.calcFormMacroBalance {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.calcDivMealAdd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+.calcDivMeal.add .calcDivMealAdd {
+    display: none;
+}
+.addButton {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    border-radius: 45px;
+}
+.addButton:hover {
+    background: var(--hoverColor1);
+}
+.addLight {
+    display: block;
+    height: 3.0rem;
+    object-fit: contain;
+    padding: 0.5rem 0.5rem;
+    transition: background 0.3s ease;
+}
+.addDark {
+    display: none;
+    height: 3.0rem;
+    object-fit: contain;
+    padding: 0.5rem 0.5rem;
+    transition: background 0.3s ease;
+}
+html.darkTheme .addLight {
+  display: none;
+}
+html.darkTheme .addDark {
+  display: block;
+}
+.calcButMealDel:hover {
+    background: var(--hoverColor1);
+}
+.calcDivResults {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.calcDivResult {
+    background-color: var(--background1);
+    padding: 2.0rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    min-width: 25rem;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+html.darkTheme .calcDivResult {
+    border: 1px solid var(--colorBorder);
+}
+.calcDivResultAll {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 2.5rem;
+    gap: 10px;
+}
+.calcResultP {
+    font-family: 'Inter', sans-serif;
+    max-width: 400px;
+    font-size: 1.4rem;
+    color: var(--textColor2);
+    margin-top: 0.5rem;
+    margin-bottom: 1.0rem;
+}
+progress#resultDensityBar {
+    display: inline-block;
+    width: 100%;
+    height: 1rem;
+    appearance: none;
+    border-radius: 5px;
+    overflow: hidden;
+}
+progress#resultDensityBar::-webkit-progress-bar {
+    background-color: var(--colorBorder);
+}
+progress#resultDensityBar::-moz-progress-bar {
+    background-color: var(--colorBorder);
+}
+progress#resultDensityBar::-webkit-progress-value {
+    background-color: var(--buttonColor1);
+    transition: width 0.5s ease;
+}
+progress#resultDensityBar::-moz-progress-bar {
+    background-color: var(--buttonColor1);
+    transition: width 0.5s ease;
+}
+progress#resultDensityBar.densityLow::-webkit-progress-value {
+    background-color: var(--buttonColor1);
+}
+progress#resultDensityBar.densityLow::-moz-progress-bar {
+    background-color: var(--buttonColor1);
+}
+progress#resultDensityBar.densityMedium::-webkit-progress-value {
+    background-color: var(--densityBarMedium);
+}
+progress#resultDensityBar.densityMedium::-moz-progress-bar {
+    background-color: var(--densityBarMedium);
+}
+progress#resultDensityBar.densityHigh::-webkit-progress-value {
+    background-color: var(--densityBarHigh);
+}
+progress#resultDensityBar.densityHigh::-moz-progress-bar {
+    background-color: var(--densityBarHigh);
+}
+.calcDivTools {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+.calcDivTool1 {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 30px;
+}
+.calcDivTool {
+    position: relative;
+    background-color: var(--background1);
+    padding: 2.0rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+html.darkTheme .calcDivTool {
+    border: 1px solid var(--colorBorder);
+}
+.calcDivToolIn {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.calcDivToolBut {
+    display: flex;
+    position: relative;
+}
+.calcDivToolConfirm {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 0.8rem;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    padding: 1rem;
+}
+.calcDivToolConfirm.active {
+    display: flex;
+}
+html.darkTheme .calcDivToolConfirm.active {
+    border: 1px solid var(--colorBorder);
+}
+.calcDivToolConfirmBut {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    gap: 20px;
+}
+.calcButTool {
+    background: var(--buttonColor1);
+    color: var(--textButton);
+    border: none;
+    padding: 0.5rem 2.0rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+}
+.calcButTool[disabled] {
+    opacity: 0.7;
+    background-color: var(--buttonColor3);
+    cursor: not-allowed;
+}
+.calcButTool:not([disabled]) {
+    opacity: 1;
+    background-color: var(--buttonColor1);
+    cursor: pointer;
+}
+.calcButTool:hover {
+    background: var(--buttonColor3);
+}
+.notificationDiv {
+    position: fixed;
+    top: 10.5rem;
+    left: 2rem;
+    z-index: 100;
+    display: flex;
+    background-color: var(--background1);
+    opacity: 0;
+    transform: translateX(-100%);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+html.darkTheme .notificationDiv {
+    border: 1px solid var(--colorBorder);
+}
+.notificationP {
+    font-family: 'Inter', sans-serif;
+    max-width: 400px;
+    font-size: 1.8rem;
+    color: var(--textColor2);
+    margin-top: 0.5rem;
+    margin-bottom: 1.0rem;
+}
+.notificationDiv.show {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+}
+/*
+Choose ingridient and meal windows
+*/
+.databaseWindow {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    top: 45%;
+    left: 25%;
+    margin-top: 0.5rem;
+    width: 20rem;
+    max-height: 20rem;
+    background-color: var(--background1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+.databaseWindow.show {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+html.darkTheme .databaseWindow {
+    border: 1px solid var(--colorBorder);
+}
+.mealWindow {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 0.5rem;
+    width: 20rem;
+    max-height: 20rem;
+    background-color: var(--background1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+.mealWindow.show {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+html.darkTheme .mealWindow {
+    border: 1px solid var(--colorBorder);
+}
+.mealWindow .searchInput {
+    width: 100%;
+    padding: 1rem 1rem;
+    font-size: 1.4rem;
+    background: var(--background2);
+    border: 2px solid var(--colorBorder);
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    color: var(--textColor2);
+    outline: none;
+    flex-shrink: 0;
+}
+.mealWindow .searchInput:focus {
+    border-color: var(--buttonColor1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.mealWindow .databaseList {
+    flex-grow: 1;
+    overflow-y: auto;
+    min-height: 0;
+}
+.mealWindow .databaseItem {
+    display: block;
+    padding: 1.0rem 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--textColor2);
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+}
+.mealWindow .databaseItem:hover {
+    background-color: var(--hoverColor1);
+}
+.databaseWindow .searchInput {
+    width: 100%;
+    padding: 1rem 1rem;
+    font-size: 1.4rem;
+    background: var(--background2);
+    border: 2px solid var(--colorBorder);
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    color: var(--textColor2);
+    outline: none;
+    flex-shrink: 0;
+}
+.databaseWindow .searchInput:focus {
+    border-color: var(--buttonColor1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.databaseWindow .databaseList {
+    flex-grow: 1;
+    overflow-y: auto;
+    min-height: 0;
+}
+.databaseWindow .databaseItem {
+    display: block;
+    padding: 1.0rem 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--textColor2);
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+}
+.databaseWindow .databaseItem:hover {
+    background-color: var(--hoverColor1);
+}
+.mealSaveWindow {
+    display: none;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 10px;
+    position: absolute;
+    z-index: 10;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 0.5rem;
+    background-color: var(--background1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: none;
+    border-radius: 10px;
+    min-width: 10rem;
+    padding: 0.5rem;
+}
+.mealSaveWindow.show {
+    display: flex;
+}
+html.darkTheme .mealSaveWindow {
+    border: 1px solid var(--colorBorder);
+}
+.mealSaveWindow .nameInput {
+    padding: 1rem 1rem;
+    font-size: 1.4rem;
+    background: var(--background2);
+    border: 2px solid var(--colorBorder);
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    color: var(--textColor2);
+    outline: none;
+}
+.mealSaveWindow .nameInput:focus {
+    border-color: var(--buttonColor1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.mealSaveWindow .calcButTool {
+    background: var(--buttonColor1);
+    color: var(--textButton);
+    border: none;
+    padding: 0.5rem 2.0rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+}
+.mealSaveWindow .calcButTool:hover {
+    background-color: var(--buttonColor3);
+}
+.calcDivAddPeriod {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding-right: 2rem;
+    border-right: 1px solid var(--colorBorder);
+}

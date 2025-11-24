@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calendar - NutriCost</title>
+    <link rel="icon" type="nutriCostIcon/ico" href="/images/nutriCostIcon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/calendar.css">
+    <script src="/jsFiles/languageDownloader.js"></script>
+    <script>
+    (function() {
+    const savedTheme = localStorage.getItem('theme')
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    if (savedTheme === 'dark' || (savedTheme === null && systemPrefersDark)) {
+      document.documentElement.classList.add('darkTheme')
+    }
+  })()
+</script>
+</head>
+<header class="header">
+    <a href="/index.html" class="logo">
+        <img src="/images/nutriCostLight.png" alt="nutriCostLight" class="logoLight">
+        <img src="/images/nutriCostDark.png" alt="nutriCostDark" class="logoDark">
+    </a>
+    <nav class="nav">
+        <a href="/pages/calculator.html" data-key="navCalculator"></a>
+        <a href="/pages/compare.html" data-key="navCompare"></a>
+        <a href="/pages/calendar.html"data-key="navCalendar"></a>
+    </nav>
+    <div class="headerRight">
+        <div class="headerButton" id="themeButton">
+            <img src="" alt="" class="headerButtonImg" id="themeImg">
+        </div>
+        <div class="languageSection">
+            <button class="headerButton" id="langButton">
+                <img src="/images/languageLight.png" alt="languageButtonLight" class="headerButtonImgLight">
+                <img src="/images/languageDark.png" alt="languageButtonDark" class="headerButtonImgDark">
+            </button>
+            <ul class="languageMenu" id="langMenu">
+                <li><a class="langOption" data-lang="en">English (US)</a></li>
+                <li><a class="langOption" data-lang="uk">Українська (UA)</a></li>
+            </ul>
+        </div>
+        <div class="accountButtonAll">
+            <button class="accountButton" id="accountButton">
+                <img src="/images/accountLight.png" alt="accountLight" class="headerButtonImgLight">
+                <img src="/images/accountDark.png" alt="accountDark" class="headerButtonImgDark">
+            </button>
+            <div class="accountDiv">
+                <button class="accountLogOut" data-key="accountLogOut"></button>
+            </div>
+            <button class="startButton" id="startButton" data-key="startButton"></button>
+        </div>
+    </div>
+</header>
+<body class="fixedPage">
+    <div class="calendarDivAll">
+        <div class="calendarDivChangeMonth">
+            <button class="monthBut" id="monthButLeft">
+                <img src="/images/calendarArrowLeftLight.png" class="butLight">
+                <img src="/images/calendarArrowLeftDark.png" class="butDark">
+            </button>
+            <h1 class="monthTitle" id="title"></h1>
+            <button class="monthBut" id="monthButRight">
+                <img src="/images/calendarArrowRightLight.png" class="butLight">
+                <img src="/images/calendarArrowRightDark.png" class="butDark">
+            </button>
+        </div>
+        <div class="calendarDivMain">
+            <div class="calendarDivAllMain">
+                <div class="calendarDivDays">
+                    <p class="daysP" data-key="calendarMon"></p>
+                    <p class="daysP" data-key="calendarTue"></p>
+                    <p class="daysP" data-key="calendarWed"></p>
+                    <p class="daysP" data-key="calendarThu"></p>
+                    <p class="daysP" data-key="calendarFri"></p>
+                    <p class="daysP" data-key="calendarSat"></p>
+                    <p class="daysP" data-key="calendarSun"></p>
+                </div>
+                <div class="calendarDivMainDays" id="calendarGrid">
+
+                </div>
+            </div>
+            <div class="calendarDivStatistic" id="calendarStatistic">
+
+            </div>
+        </div>
+    </div>
+    <div class="calendarDayStatsDiv" id="calendarDayStatsDiv">
+        <div class="weightDiv">
+            <p class="statsP">
+                <span data-key="calcResultWeight"></span>
+                <span id="calendarDayWeightResult" class="resultSpan"></span>
+                <span data-key="unitGramm" class="unitResult"></span>
+            </p>
+        </div>
+        <div class="macroBalanceDiv">
+            <p class="statsP" data-key="ingredient1MacroBalanceP"></p>
+            <p class="statsP">
+                <span data-key="calcResultProteins"></span>
+                <span id="calendarDayProteinsResult" class="resultSpan"></span>
+                <span data-key="unitGramm" class="unitResult"></span>
+            </p>
+            <p class="statsP">
+                <span data-key="calcResultFats"></span>
+                <span id="calendarDayFatsResult" class="resultSpan"></span>
+                <span data-key="unitGramm" class="unitResult"></span>
+            </p>
+            <p class="statsP">
+                <span data-key="calcResultCarbohydrates"></span>
+                <span id="calendarDayCarbohydratesResult" class="resultSpan"></span>
+                <span data-key="unitGramm" class="unitResult"></span>
+            </p>
+        </div>
+        <div class="caloriesDiv">
+            <p class="statsP">
+                <span data-key="calcResultEnergy"></span>
+                <span id="calendarDayCaloriesResult" class="resultSpan"></span>
+                <span data-key="unitKcal" class="unitResult"></span>
+            </p>
+        </div>
+        <div class="costDiv">
+            <p class="statsP">
+                <span data-key="calcResultCost"></span>
+                <span id="calendarDayCostResult" class="resultSpan"></span>
+                <span class="unitResult">$</span>
+            </p>
+        </div>
+    </div>
+    <script src="/jsFiles/globalVariables.js" defer></script>
+    <script src="../jsFiles/main.js" defer></script>
+    <script src="/jsFiles/calendar.js" defer></script>
+</body>

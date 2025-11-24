@@ -1,0 +1,46 @@
+{
+    "potatowithchicken": {
+        "name_en": "Potato with chicken",
+        "name_uk": "Картопля з куркою",
+        "ingredients": [
+            {"key": "potato"},
+            {"key": "chickenbreast"}
+        ]
+    },
+    "vegetablesalad": {
+        "name_en": "Vegetable salad",
+        "name_uk": "Овочевий салат",
+        "ingredients": [
+            {"key": "tomato"},
+            {"key": "cucumber"},
+            {"key": "sunfloweroil"}
+        ]
+    },
+    "buckwheatwithmushrooms": {
+        "name_en": "Buckwheat with Mushrooms",
+        "name_uk": "Гречка с грибами",
+        "ingredients": [
+            {"key": "buckwheat"},
+            {"key": "mushroomschampignon"},
+            {"key": "onion"}
+        ]
+    },
+    "ricewithveggies": {
+        "name_en": "Rice with Veggies",
+        "name_uk": "Рис з овочами",
+        "ingredients": [
+            {"key": "rice"},
+            {"key": "greenpeas"},
+            {"key": "corn"}
+        ]
+    },
+    "veggiestew": {
+        "name_en": "Veggie Stew",
+        "name_uk": "Овочеве рагу",
+        "ingredients": [
+            {"key": "zucchini"},
+            {"key": "eggplant"},
+            {"key": "tomato"}
+        ]
+    }
+}

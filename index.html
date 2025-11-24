@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - NutriCost</title>
+    <link rel="icon" type="nutriCostIcon/ico" href="/images/nutriCostIcon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/jsFiles/languageDownloader.js"></script>
+    <script>
+    (function() {
+    const savedTheme = localStorage.getItem('theme')
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    if (savedTheme === 'dark' || (savedTheme === null && systemPrefersDark)) {
+      document.documentElement.classList.add('darkTheme')
+    }
+  })()
+</script>
+</head>
+<header class="header">
+    <a href="" class="logo">
+        <img src="/images/nutriCostLight.png" alt="nutriCostLight" class="logoLight">
+        <img src="/images/nutriCostDark.png" alt="nutriCostDark" class="logoDark">
+    </a>
+    <nav class="nav">
+        <a href="/pages/calculator.html" data-key="navCalculator"></a>
+        <a href="/pages/compare.html" data-key="navCompare"></a>
+        <a href="/pages/calendar.html"data-key="navCalendar"></a>
+    </nav>
+    <div class="headerRight">
+        <div class="headerButton" id="themeButton">
+            <img src="" alt="" class="headerButtonImg" id="themeImg">
+        </div>
+        <div class="languageSection">
+            <button class="headerButton" id="langButton">
+                <img src="/images/languageLight.png" alt="languageButtonLight" class="headerButtonImgLight">
+                <img src="/images/languageDark.png" alt="languageButtonDark" class="headerButtonImgDark">
+            </button>
+            <ul class="languageMenu" id="langMenu">
+                <li><a class="langOption" data-lang="en">English (US)</a></li>
+                <li><a class="langOption" data-lang="uk">Українська (UA)</a></li>
+            </ul>
+        </div>
+        <div class="accountButtonAll">
+            <button class="accountButton" id="accountButton">
+                <img src="/images/accountLight.png" alt="accountLight" class="headerButtonImgLight">
+                <img src="/images/accountDark.png" alt="accountDark" class="headerButtonImgDark">
+            </button>
+            <div class="accountDiv">
+                <button class="accountLogOut" data-key="accountLogOut"></button>
+            </div>
+            <button class="startButton" id="startButton" data-key="startButton"></button>
+        </div>
+    </div>
+</header>
+<body>
+    <section class="hero">
+        <div class="heroDiv1">
+            <h1 class="heroH1" data-key="heroH1"></h1>
+            <p class="heroP1" data-key="heroP1"></p>
+            <button class="heroBut1" data-key="heroBut1"></button>
+        </div>
+        <div class="heroDivAll fastanimate anim1">
+            <div class="heroDiv2">
+                <h1 class="heroH2" data-key="heroH2"></h1>
+                <p class="heroP2" data-key="heroP2"></p>
+            </div>
+            <div class="heroDiv3">
+                <div class="heroToolBox" onclick="scrollToCalculator()">
+                    <h1 class="heroToolBoxH" data-key="heroToolBox1"></h1>
+                    <img src="/images/calckImage1.png" alt="calckImage1" class="heroToolBoxImg img1">
+                </div>
+                <div class="heroToolBox" onclick="scrollToComparator()">
+                    <h1 class="heroToolBoxH" data-key="heroToolBox2"></h1>
+                    <img src="/images/compareImage1.png" alt="compareImage1" class="heroToolBoxImg img2">
+                </div>
+                <div class="heroToolBox" onclick="scrollToCalendar()">
+                    <h1 class="heroToolBoxH" data-key="heroToolBox3"></h1>
+                    <img src="/images/calendarImage1.png" alt="calendarImage1" class="heroToolBoxImg img3">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="conception">
+        <div class="conceptionDiv1">
+            <h1 class="conceptionH1" data-key="conceptionH1"></h1>
+            <p class="conceptionP1" data-key="conceptionP1"></p>
+            <button class="conceptionBut1" data-key="conceptionBut1"></button>
+        </div>
+        <div class="conceptionDiv2All">
+            <div class="conceptionDiv2 slowanimate anim2">
+                <h1 class="conceptionH" data-key="conceptionH2"></h1>
+                <ul class="conceptionUl">
+                    <li data-key="conceptionLi1"></li>
+                    <li data-key="conceptionLi2"></li>
+                    <li data-key="conceptionLi3"></li>
+                    <li data-key="conceptionLi4"></li>
+                </ul>
+            </div>
+            <div class="conceptionImg1 slowanimate anim3">
+                <img src="/images/blueberryes.png" alt="blueberryes">
+            </div>
+        </div>
+        <div class="conceptionDiv3All">
+            <div class="conceptionImg2 slowanimate anim2">
+                <img src="/images/pears.png" alt="pears">
+            </div>
+            <div class="conceptionDiv3 slowanimate anim3">
+                <h1 class="conceptionH" data-key="conceptionH3"></h1>
+                <ul class="conceptionUl">
+                    <li data-key="conceptionLi5"></li>
+                    <li data-key="conceptionLi6"></li>
+                    <li data-key="conceptionLi7"></li>
+                    <li data-key="conceptionLi8"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="conceptionDiv4All">
+            <div class="conceptionDiv4 slowanimate anim2">
+                <h1 class="conceptionH4" data-key="conceptionH4"></h1>
+                <ul class="conceptionUl">
+                    <li data-key="conceptionLi9"></li>
+                    <li data-key="conceptionLi10"></li>
+                    <li data-key="conceptionLi11"></li>
+                    <li data-key="conceptionLi12"></li>
+                </ul>
+            </div>
+            <div class="conceptionImg3 slowanimate anim3">
+                <img src="/images/meat.png" alt="meat">
+            </div>
+        </div>
+    </section>
+    <section class="features">
+        <div class="featuresDivAll" id="featuresCalculator">
+            <div class="featuresDiv">
+                <h1 class="featuresH" data-key="featuresH1"></h1>
+                <p class="featuresP" data-key="featuresP1"></p>
+                <div class="featuresButtons">
+                    <button class="featuresBut active" data-target="featuresCalcVideo1" data-key="featuresBut1"></button>
+                    <button class="featuresBut" data-target="featuresCalcVideo2" data-key="featuresBut2"></button>
+                    <button class="featuresBut" data-target="featuresCalcVideo3" data-key="featuresBut3"></button>
+                </div>
+            </div>
+            <div class="featuresVideoCont">
+                <video
+                    class="featuresVideo active"
+                    id="featuresCalcVideo1"
+                    src="/videos/calcVideo1.mp4"
+                    autoplay
+                    muted
+                    loop>
+                </video>
+                    <video
+                    class="featuresVideo"
+                    id="featuresCalcVideo2"
+                    src="/videos/calcVideo2.mp4"
+                    autoplay
+                    muted
+                    loop>
+                </video>
+                    <video
+                    class="featuresVideo"
+                    id="featuresCalcVideo3"
+                    src="/videos/calcVideo3.mp4"
+                    autoplay
+                    muted
+                    loop>
+                </video>
+            </div>
+        </div>
+        <div class="featuresDivAll" id="featuresComparator">
+            <div class="featuresVideoCont">
+                <video
+                    class="featuresVideo active"
+                    id="featuresCompVideo1"
+                    src="/videos/compVideo1.mp4"
+                    autoplay
+                    muted
+                    loop>
+                </video>
+                    <video
+                    class="featuresVideo"
+                    id="featuresCompVideo2"
+                    src="/videos/compVideo2.mp4"
+                    autoplay
+                    muted
+                    loop>
+                </video>
+                    <video
+                    class="featuresVideo"
+                    id="featuresCompVideo3"
+                    src="/videos/compVideo3.mp4"
+                    autoplay
+                    muted
+                    loop>
+                </video>
+            </div>
+            <div class="featuresDiv">
+                <h1 class="featuresH" data-key="featuresH2"></h1>
+                <p class="featuresP" data-key="featuresP2"></p>
+                <div class="featuresButtons">
+                    <button class="featuresBut active" data-target="featuresCompVideo1" data-key="featuresBut4"></button>
+                    <button class="featuresBut" data-target="featuresCompVideo2" data-key="featuresBut5"></button>
+                    <button class="featuresBut" data-target="featuresCompVideo3" data-key="featuresBut6"></button>
+                </div>
+            </div>
+        </div>
+        <div class="featuresDivAll" id="featuresCalendar">
+            <div class="featuresDiv">
+                <h1 class="featuresH" data-key="featuresH3"></h1>
+                <p class="featuresP" data-key="featuresP3"></p>
+                <div class="featuresButtons">
+                    <button class="featuresBut active" data-target="featuresCalendarVideo1" data-key="featuresBut7"></button>
+                    <button class="featuresBut" data-target="featuresCalendarVideo2" data-key="featuresBut8"></button>
+                    <button class="featuresBut" data-target="featuresCalendarVideo3" data-key="featuresBut9"></button>
+                </div>
+            </div>
+            <div class="featuresVideoCont">
+                <video
+                    class="featuresVideo active"
+                    id="featuresCalendarVideo1"
+                    src="/videos/calendarVideo1.mp4"
+                    autoplay
+                    muted
+                    loop>
+                </video>
+                    <video
+                    class="featuresVideo"
+                    id="featuresCalendarVideo2"
+                    src="/videos/calendarVideo2.mp4"
+                    autoplay
+                    muted
+                    loop>
+                </video>
+                    <video
+                    class="featuresVideo"
+                    id="featuresCalendarVideo3"
+                    src="/videos/calendarVideo3.mp4"
+                    autoplay
+                    muted
+                    loop>
+                </video>
+            </div>
+        </div>
+    </section>
+    <section class="finalAction">
+        <div class="finalActionDiv">
+                <img src="/images/strawberry.png" alt="strawberry" class="finalActionImg strawberry">
+            <div class="finalActionDiv2">
+                <h1 class="finalActionH" data-key="finalActionH1"></h1>
+                <p class="finalActionP" data-key="finalActionP1"></p>
+                <button class="finalActionBut" data-key="finalActionBut1"></button>
+            </div>
+                <img src="/images/orange.png" alt="orange" class="finalActionImg orange">
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footerDivAll">
+            <div class="footerDiv1">
+                <a href="">
+                    <img src="/images/nutriCostLight.png" alt="nutriCostLight" class="logo2Light">
+                    <img src="/images/nutriCostDark.png" alt="nutriCostLight" class="logo2Dark">
+                </a>
+                <p class="footerP1" data-key="footerP1">Your indispensable assistant in the world of healthy eating</p>
+            </div>
+            <div class="footerDiv2">
+                <p class="footerP2" data-key="footerP2">Features</p>
+                <a href="/pages/calculator.html" class="footerA" data-key="footerA1">Calculator</a>
+                <a href="/pages/compare.html" class="footerA" data-key="footerA2">Comparator</a>
+                <a href="/pages/calendar.html" class="footerA" data-key="footerA3">Calendar</a>
+            </div>
+            <div class="footerDiv3">
+                <p class="footerP2" data-key="footerP3">Connect</p>
+                <a href="https://github.com/KDPShehe" class="footerA" data-key="footerA4">GitHub</a>
+                <a href="https://linkedin.com/in/mark-holovenko-05a001290" class="footerA" data-key="footerA5">Linkedin</a>
+            </div>
+        </div>
+        <div class="footerCopyright">
+            <p data-key="footerP4">&copy; 2025 NutriCost. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="/jsFiles/globalVariables.js" defer></script>
+    <script src="/jsFiles/main.js" defer></script>
+</body>
+</html>

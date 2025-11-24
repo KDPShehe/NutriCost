@@ -53,12 +53,20 @@ git clone [https://github.com/KDPShehe/NutriCost.git](https://github.com/KDPSheh
 
 **Note:** Keep the terminal window open while using the app.
 
-#### Step 4: Run the Application (Frontend)
+### 🔧 Step 4: Run the Application (Frontend)
 
-Open the `index.html` file (located in the root folder) in any modern browser (Chrome, Opera, Firefox).
+### ✔️ Using VS Code (Recommended)
 
-  * *Tip:* If using VS Code, right-click `index.html` and select **"Open with Live Server"** for the best experience.
+1.  Open the project folder in **Visual Studio Code**
+2.  Install the **Live Server** extension:
+    -   Go to **Extensions** panel (Ctrl+Shift+X)
+    -   Search for **"Live Server"**
+    -   Click **Install**
+3.  In the Explorer panel, find **index.html**
+4.  Right‑click **index.html**
+5.  Select **"Open with Live Server"**
 
+A browser window will open automatically with the app running.
 -----
 
 ### 📖 How to Use
@@ -137,12 +145,20 @@ git clone [https://github.com/KDPShehe/NutriCost.git](https://github.com/KDPSheh
 
 **Важливо:** Не закривайте вікно терміналу, поки користуєтесь сайтом. Сервер має працювати постійно.
 
-#### Крок 4: Запуск Сайту (Frontend)
+## 🚀 Крок 4: Запуск сайту (Frontend)
 
-Відкрийте файл `index.html` (знаходиться в головній папці проекту) у будь-якому сучасному браузері (Chrome, Opera, Firefox).
+### ✔️ Через VS Code (Рекомендовано)
 
-  * *Порада:* Якщо ви використовуєте VS Code, найкраще натиснути правою кнопкою миші на `index.html` і вибрати **"Open with Live Server"**.
+1.  Відкрийте папку проєкту у **Visual Studio Code**
+2.  Встановіть розширення **Live Server**:
+    -   Відкрийте панель розширень (Ctrl+Shift+X)
+    -   Знайдіть **"Live Server"**
+    -   Натисніть **Install**
+3.  У лівій панелі знайдіть файл **index.html**
+4.  Клацніть по ньому правою кнопкою
+5.  Оберіть **"Open with Live Server"**
 
+Браузер відкриється автоматично, і сайт запуститься.
 -----
 
 ### 📖 Як користуватися

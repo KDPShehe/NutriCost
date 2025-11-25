@@ -1293,8 +1293,9 @@ addCalendarButYes.addEventListener('click', async () => {
 document.addEventListener('click', (event) => {
     if (!addCalendarDiv.contains(event.target) &&
         !addCalendarButYes.contains(event.target) &&
-        !addCalendarButNo.contains(event.target)) {
-        addCalendarDiv.classList.remove('show')
+        !addCalendarButNo.contains(event.target) &&
+        !addCalendarBut.contains(event.target)) {
+        addCalendarDiv.classList.remove('active')
     }
 })
 

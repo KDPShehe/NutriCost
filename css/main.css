@@ -892,16 +892,163 @@ html.darkTheme .logo2Dark {
     transform: translateX(0);
 }
 
-/* 
-   ADAPTIVE STYLES
+/*
+    ADAPTIVE STYLES
 */
 
-@media (max-widht: 1200px) {
-
+@media (max-width: 1200px) {
+    header { padding: 1.0rem 5.0rem; }
+    .footerDivAll { padding-left: 5.0rem; padding-right: 5.0rem; }
+    .heroDiv1 { padding-left: 5%; padding-right: 5%; }
+    .conceptionDiv2All, .conceptionDiv3All, .conceptionDiv4All { gap: 50px; }
+    .heroH1 { font-size: 5.0rem; }
 }
 
-@media (max-widht: 768px) {
-    html {
-    font-size: 56.25%;
+@media (max-width: 768px) {
+    html { font-size: 55%; }
+
+    header {
+        padding: 1.0rem 2.0rem;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .logo {
+        flex-basis: auto;
+        width: auto;
+        text-align: center;
+    }
+
+    .headerRight {
+        width: 100%;
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+        gap: 15px;
+    }
+
+    nav a {
+        margin-right: 0;
+        padding: 0.8rem 1.2rem;
+        background-color: var(--background2);
+        border-radius: 20px;
+        font-size: 1.4rem;
+    }
+
+    .hero::before {
+        min-height: 100vh;
+        background-position: center;
+        background-size: cover;
+    }
+    .heroDiv1 {
+        padding: 22.0rem 2.0rem 5.0rem 2.0rem;
+        align-items: center;
+        text-align: center;
+    }
+    .heroH1 { font-size: 4.0rem; }
+    .heroH2 { font-size: 3.2rem; }
+    
+    .conceptionDiv2All, .conceptionDiv3All, .conceptionDiv4All {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        margin-top: 4rem;
+    }
+    .conceptionDiv3All { flex-direction: column-reverse; }
+    
+    .conceptionH1, .conceptionH, .conceptionH4, .featuresH, .finalActionH {
+        font-size: 3.0rem;
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .conceptionImg1 img, .conceptionImg2 img, .conceptionImg3 img {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+    }
+
+    .featuresDivAll {
+        flex-direction: column-reverse;
+        padding-bottom: 5rem;
+        gap: 30px;
+    }
+    .featuresButtons {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .featuresVideoCont {
+        width: 100%;
+        min-height: auto;
+        aspect-ratio: 16/9;
+    }
+
+    .footerDivAll {
+        flex-direction: column;
+        padding: 2rem;
+        text-align: center;
+        gap: 30px;
+    }
+    .finalActionImg { display: none; }
+}
+
+@media (max-width: 480px) {
+
+    html { font-size: 50%; }
+
+    nav {
+        gap: 8px;
+    }
+    nav a {
+        font-size: 1.3rem;
+        padding: 0.6rem 1.0rem;
+    }
+
+    .heroToolBox {
+        width: 100%;
+        max-width: none;
+        box-sizing: border-box;
+        margin-bottom: 2rem;
+        min-height: 200px;
+    }
+
+    .heroDiv3 {
+        gap: 20px;
+        padding: 0;
+        width: 100%;
+    }
+
+    .heroToolBoxImg {
+        max-width: none;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.3;
+        transform: none !important;
+    }
+
+    .heroH1 { font-size: 3.2rem; }
+    
+    .featuresVideoCont {
+        border-radius: 5px;
+    }
+    
+    .featuresBut {
+        width: 100%;
+        text-align: center;
     }
 }

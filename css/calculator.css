@@ -592,3 +592,255 @@ html.darkTheme .mealSaveWindow {
     padding-right: 2rem;
     border-right: 1px solid var(--colorBorder);
 }
+
+/*
+    ADAPTIVE STYLES  
+*/
+
+@media (max-width: 1200px) {
+
+    .fixedPage {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+        background-color: var(--background2);
+    }
+
+    .calcDivAll {
+        padding-top: 18rem; 
+        padding-bottom: 5rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        gap: 30px;
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+
+    .calcDivMeals {
+        display: flex;
+        flex-direction: column !important; 
+        align-items: center;  
+        gap: 20px;
+        width: 100%;
+    }
+
+    .calcDivMeal {
+        width: 100%;
+        max-width: 600px; 
+        min-width: 0;
+        padding: 2.5rem;
+        min-height: auto; 
+        box-sizing: border-box;
+        margin: 0 auto;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        text-align: center;
+    }
+
+    .calcDivMain {
+        width: 100%;
+        justify-content: center;
+        position: relative;
+    }
+
+    .calcFormName, .calcFormWeight, .calcFormMacroBalance, .calcFormCost {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calcButChoose {
+        margin-top: 1rem;
+        display: inline-block;
+        float: none !important;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .calcFormP, .calcResultP, .calcFormP1, .calcFormP2 {
+        text-align: center;
+        width: 100%;
+    }
+
+    .calcDivMeal:not(.add) {
+        min-height: 150px; 
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    .calcDivSector1 {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .calcDivResults {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .calcDivResult {
+        width: 100%;
+        max-width: 600px; 
+        margin: 0 auto;
+        box-sizing: border-box;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .calcDivResultAll {
+        width: 100%;
+        align-items: center;
+    }
+
+    .calcInput {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .databaseWindow, 
+    .mealWindow, 
+    .mealSaveWindow,
+    .calcDivToolConfirm {
+        position: fixed !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        
+        bottom: auto !important; 
+        
+        width: 90% !important;
+        max-width: 350px !important;
+        height: auto !important;
+        max-height: 70vh !important;
+        
+        margin: 0 !important;
+        
+        display: none; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        background-color: var(--background1);
+
+        box-shadow: 0 0 0 100vh rgba(0,0,0,0.85) !important;
+        
+        z-index: 9999;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 10px !important;
+        border: 1px solid var(--colorBorder) !important;
+    }
+    
+    .databaseWindow.show, 
+    .mealWindow.show, 
+    .mealSaveWindow.show,
+    .calcDivToolConfirm.active {
+        display: flex !important;
+    }
+
+    .mealWindow input, 
+    .databaseWindow input,
+    .mealSaveWindow input {
+        width: 100%;
+        max-width: 350px; 
+        margin-bottom: 10px;
+        background-color: var(--background2);
+        z-index: 10000;
+        text-align: center;
+        padding: 1rem;
+        border-radius: 10px;
+        border: 1px solid var(--colorBorder);
+    }
+    
+    .databaseList, .mealWindow .databaseList {
+        width: 100%;
+        max-width: 350px;
+        background: var(--background2);
+        border-radius: 10px;
+        max-height: 50vh; 
+        overflow-y: auto;
+        padding: 5px;
+    }
+
+    .calcDivToolConfirm > p {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .calcDivToolConfirmBut {
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    html {
+        font-size: 55%; 
+    }
+
+    .calcDivAll {
+        padding-top: 22rem; 
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .calcButChoose {
+        float: none;
+        margin: 1rem auto;
+        display: block;
+    }
+
+    .calcDivTools {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .calcDivTool1 {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .calcDivTool {
+        width: 100%;
+        justify-content: center;
+        padding: 1.5rem;
+    }
+
+    .notificationDiv {
+        top: 24rem !important; 
+        z-index: 2000 !important;
+        left: 2rem;
+        width: auto;
+        right: 2rem; 
+        box-sizing: border-box;
+    }
+
+}
+
+@media (max-width: 480px) {
+    html { font-size: 50%; }
+    
+    .calcButTool {
+        padding: 1.2rem 2.0rem;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .calcDivMeal:not(.add) {
+        min-height: 250px; 
+    }
+}

@@ -322,3 +322,184 @@ html.darkTheme .mealWindow {
 .mealWindow .databaseItem:hover {
     background-color: var(--hoverColor1);
 }
+
+/*
+    ADAPTIVE STYLES
+*/
+
+@media (max-width: 1200px) {
+    .fixedPage {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+        background-color: var(--background2);
+    }
+
+    .compDivAll {
+        padding-top: 14rem;
+        padding-bottom: 5rem;
+        gap: 30px; 
+        min-height: 100vh;
+        box-sizing: border-box;
+
+        display: flex;
+        align-items: center; 
+        
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .compDivMeal {
+        min-width: 0; 
+        width: 100%;
+        max-width: 450px; 
+        padding: 2rem;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 900px) {
+    
+    html {
+        font-size: 55%; 
+    }
+
+    .compDivAll {
+        flex-direction: column; 
+        align-items: center;    
+        padding-top: 22rem;     
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        gap: 40px;
+        justify-content: flex-start; 
+    }
+
+    .compDivMeal {
+        width: 100%;
+        max-width: 500px; 
+        min-height: auto;
+        padding: 3rem 2rem 2rem 2rem;
+        text-align: center;
+        align-items: center;
+        position: relative !important;
+    }
+
+    .compDivSign {
+        margin: 0;
+    }
+    
+    .compMainH {
+        font-size: 5rem; 
+        margin: 0;
+    }
+
+    .compDivChooseIngr {
+        margin-top: 4rem;
+    }
+    .compDivChooseMeal {
+        margin-top: 4rem;
+        padding-top: 4rem;
+    }
+
+    .compButMealDel {
+        position: absolute !important; 
+        top: 1.5rem;
+        right: 1.5rem;
+        margin: 0;
+        left: auto;
+        bottom: auto;
+        display: block;
+        z-index: 5;
+    }
+
+    .compDivResult {
+        flex-direction: column; 
+        align-items: center;
+        width: 100%;
+    }
+
+    .compDivChosen {
+        margin-left: 0; 
+        align-items: center;
+        width: 100%;
+    }
+
+    .databaseWindow, 
+    .mealWindow {
+        position: fixed !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        
+        bottom: auto !important;
+        margin: 0 !important;
+        
+        width: 90% !important;
+        max-width: 350px !important;
+        height: auto !important;
+        max-height: 70vh !important;
+        
+        display: none; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        background-color: var(--background1);
+        box-shadow: 0 0 0 100vh rgba(0,0,0,0.85) !important;
+        z-index: 9999;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 10px !important;
+        border: 1px solid var(--colorBorder) !important;
+    }
+    
+    .databaseWindow.show, 
+    .mealWindow.show {
+        display: flex !important;
+    }
+
+    .databaseWindow input,
+    .mealWindow input {
+        width: 100%;
+        max-width: 350px; 
+        margin-bottom: 10px;
+        background-color: var(--background2);
+        z-index: 10000;
+        text-align: center;
+        padding: 1rem;
+        border-radius: 10px;
+        border: 1px solid var(--colorBorder);
+    }
+    
+    .databaseList {
+        width: 100%;
+        max-width: 350px;
+        background: var(--background2);
+        border-radius: 10px;
+        max-height: 50vh; 
+        overflow-y: auto;
+        padding: 5px;
+    }
+    
+    .databaseItem {
+        text-align: center; 
+    }
+    
+    progress.resultDensityBar {
+        width: 100%; 
+    }
+}
+
+@media (max-width: 480px) {
+    html { font-size: 50%; }
+    
+    .compChooseBut {
+        width: 100%;
+        padding: 1.2rem;
+    }
+    
+    .compDivAll {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}

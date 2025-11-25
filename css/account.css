@@ -141,3 +141,104 @@ html.darkTheme .acclogoDark {
     top: -11%;
     left: 39%;
 }
+
+/* 
+    ADAPTIVE STYLES
+*/
+
+@media (max-width: 1200px) {
+    .fixedPage {
+        background-color: var(--background2);
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .accountDivAll {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    html {
+        font-size: 55%; 
+    }
+
+    .fixedPage {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .accountDivAll {
+        padding: 4rem 2rem; 
+        width: 100%;
+        justify-content: center; 
+        box-sizing: border-box;
+    }
+
+    .accountDivMain {
+        width: 100%;
+        max-width: 400px;
+        margin-top: 4rem;
+        padding: 2.5rem;
+        box-sizing: border-box;
+    }
+
+    .accountDivChange {
+        top: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: max-content;
+        gap: 20px;
+    }
+
+    .accountDivChoose {
+        gap: 10px;
+        width: 100%;
+        display: flex;
+    }
+
+    .accountBut {
+        padding: 1.2rem 0;
+        width: 100%;
+        flex: 1;
+        font-size: 1.3rem;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .acclogoLight, .acclogoDark {
+        max-width: 160px;
+        padding-bottom: 2rem;
+    }
+
+    .accountInput {
+        font-size: 1.6rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .accountBut2 {
+        width: 100%;
+        padding: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    html { font-size: 50%; }
+
+    .accountDivAll {
+        padding: 2rem 1.5rem;
+    }
+    
+    .accountDivMain {
+        padding: 2rem;
+    }
+    
+    .accountDivChange {
+        top: -50px; 
+    }
+}

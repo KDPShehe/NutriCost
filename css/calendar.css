@@ -187,3 +187,179 @@ html.darkTheme .calendarDayStatsDiv {
     cursor: default;
     padding: 2rem;
 }
+
+/*
+    ADAPTIVE STYLES FOR CALENDAR PAGE
+*/
+
+@media (max-width: 1200px) {
+    .fixedPage {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+        background-color: var(--background2);
+    }
+
+    .calendarDivAll {
+        padding-top: 14rem; 
+        padding-bottom: 5rem;
+        gap: 30px;
+        min-height: 100vh;
+        box-sizing: border-box;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .calendarDivMain {
+        flex-direction: column; 
+        align-items: center;
+        gap: 30px;
+        width: 100%;
+    }
+
+    .calendarDivAllMain {
+        width: 100%;
+        min-width: 0 !important;
+        max-width: 800px; 
+        min-height: auto;
+        padding: 1.5rem;
+        box-sizing: border-box;
+    }
+
+    .calendarDivStatistic {
+        width: 100%;
+        min-width: 0 !important;
+        max-width: 800px;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+        grid-template-rows: auto; 
+        padding: 2rem;
+        gap: 10px;
+        box-sizing: border-box;
+    }
+    
+    .weekStatBut {
+        width: 100%;
+        max-width: none;
+        box-sizing: border-box;
+        font-size: 1.6rem;
+        padding: 1.5rem;
+    }
+
+    .calendarDayStatsDiv {
+        position: fixed !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        
+        width: 90% !important;
+        max-width: 320px !important;
+        min-width: 0 !important;
+        
+        flex-direction: column;
+        gap: 15px;
+        padding: 25px;
+
+        box-shadow: 0 0 0 100vh rgba(0,0,0,0.85) !important;
+        z-index: 2000;
+        
+        display: none; 
+        background-color: var(--background1);
+        border-radius: 15px !important;
+        border: 1px solid var(--colorBorder);
+    }
+    
+    .calendarDayStatsDiv.show {
+        display: flex !important;
+    }
+
+    .statsP {
+        text-align: center;
+        margin-bottom: 0.5rem;
+        font-size: 1.6rem;
+    }
+    
+    .calendarDayStatsDiv > div {
+        text-align: center;
+        border-bottom: 1px solid var(--colorBorder);
+        padding-bottom: 1rem;
+    }
+    .calendarDayStatsDiv > div:last-child {
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    html {
+        font-size: 50%; 
+    }
+
+    .calendarDivAll {
+        padding-top: 22rem; 
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .calendarDivChangeMonth {
+        gap: 20px; 
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    .monthTitle {
+        font-size: 2.2rem; 
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .calendarDivAllMain {
+        padding: 1rem;
+    }
+
+    .calendarDivDays, .calendarDivMainDays {
+        gap: 3px;
+    }
+
+    .daysP {
+        font-size: 1.2rem; 
+        margin-bottom: 0.5rem;
+    }
+
+    .calendarDay {
+        padding: 0.2rem;
+        font-size: 1.4rem;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 1 / 1; 
+    }
+
+    .calendarDivStatistic {
+        grid-template-columns: 1fr 1fr; 
+        padding: 1rem;
+    }
+
+    .calendarDayStatsDiv {
+        width: 90% !important;
+        max-width: 300px !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .calendarDay {
+        font-size: 1.2rem; 
+    }
+    
+    .daysP {
+        font-size: 1.0rem; 
+    }
+
+    .calendarDivAll {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
